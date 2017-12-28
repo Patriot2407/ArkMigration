@@ -15,6 +15,6 @@ fi
 clear
 echo "Starting rsync. Please wait..."
 sudo touch /Scripts/rsync.log
-ssh $RSYNCORIGINUSER@$RSYNCORIGINSERVER rsync -rtvuc --progress $DESTINATIONTOBECOPIED $COPYTO >> /Scripts/rsync.log
+ssh $RSYNCORIGINUSER@$RSYNCORIGINSERVER rsync -rtvuc --progress $DESTINATIONTOBECOPIED $COPYTO | tee /Scripts/rsync.log
 echo "Finished"
 exit 0
