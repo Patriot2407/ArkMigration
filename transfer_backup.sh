@@ -1,6 +1,5 @@
 #!/bin/bash
 # VARS
-SERVERPASS='##'
 RSYNCORIGINSERVER='##'
 RSYNCORIGINUSER='##'
 DESTINATIONTOBECOPIED='/Ark/ShooterGame/Saved'
@@ -15,6 +14,7 @@ if [ ! -d /Ark ]
 fi
 clear
 echo "Starting rsync. Please wait..."
+sudo touch /Scripts/rsync.log
 ssh $RSYNCORIGINUSER@$RSYNCORIGINSERVER rsync -rtvuc --progress $DESTINATIONTOBECOPIED $COPYTO >> /Scripts/rsync.log
 echo "Finished"
 exit 0
